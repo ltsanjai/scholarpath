@@ -1,0 +1,78 @@
+import type { Scholarship } from '../types/scholarship';
+
+export const INITIAL_SCHOLARSHIPS: Scholarship[] = [
+  {
+    id: 'demo-1',
+    name: 'National Merit STEM Innovation Grant',
+    provider: 'Department of Science and Technology (Sample)',
+    description: 'Supports undergraduate students pursuing disruptive research or degree programs in STEM fields with strong academic merit.',
+    educationLevels: ['Undergraduate'],
+    applicableRegions: ['National', 'All States'],
+    category: 'STEM',
+    awardAmountMin: 50000,
+    awardAmountMax: 100000,
+    awardCurrency: 'INR',
+    incomeLimit: 600000,
+    minimumAcademicScore: 85,
+    criteria: [
+      {
+        id: 'c1',
+        description: 'Minimum 85% in qualifying senior secondary or university examination',
+        requirementValue: 85,
+        operator: 'greater_than_or_equal',
+        sourceReference: 'Sample Guidelines Sec 4.2',
+        isMandatory: true,
+      },
+      {
+        id: 'c2',
+        description: 'Enrolled in an Undergraduate STEM program',
+        requirementValue: 'Undergraduate',
+        operator: 'equals',
+        sourceReference: 'Sample Guidelines Sec 1.1',
+        isMandatory: true,
+      }
+    ],
+    requiredDocuments: ['Academic Transcripts', 'Income Certificate', 'Statement of Purpose'],
+    applicationStartDate: '2026-06-01',
+    applicationDeadline: '2026-08-15',
+    officialInformationUrl: 'https://example.gov.in/stem-grant-sample',
+    officialApplicationUrl: 'https://example.gov.in/apply-sample',
+    sourceName: 'Sample Portal Guidelines 2026',
+    lastVerifiedAt: '2026-05-10',
+    verificationStatus: 'Sample demonstration data',
+    dataOrigin: 'demo',
+    missingInformation: ['Exact disbursal dates unconfirmed in sample spec'],
+  },
+  {
+    id: 'demo-2',
+    name: 'Public Service Leadership Scholarship',
+    provider: 'Civic Empowerment Foundation',
+    description: 'Empowering students passionate about public governance, law, and community development.',
+    educationLevels: ['Undergraduate', 'Postgraduate'],
+    applicableRegions: ['All States'],
+    category: 'Need-Based',
+    awardAmountMin: 25000,
+    awardAmountMax: 50000,
+    awardCurrency: 'INR',
+    incomeLimit: 400000,
+    criteria: [
+      {
+        id: 'c3',
+        description: 'Annual family income under 4,00,000 INR',
+        requirementValue: 400000,
+        operator: 'less_than_or_equal',
+        sourceReference: 'Foundation Bylaws Art. 3',
+        isMandatory: true,
+      }
+    ],
+    requiredDocuments: ['Income Proof', 'Recommendation Letter'],
+    applicationDeadline: '2026-09-30',
+    officialInformationUrl: 'https://example.org/civic-leadership',
+    officialApplicationUrl: 'https://example.org/apply',
+    sourceName: 'Foundation Public Disclosure',
+    lastVerifiedAt: '2026-04-12',
+    verificationStatus: 'Sample demonstration data',
+    dataOrigin: 'demo',
+    missingInformation: ['Minimum academic score not specified'],
+  }
+];
